@@ -6,7 +6,7 @@ const DashBoardAppointments = ({ date }) => {
     const [appointments, setAppointments] = useState([]);
     const { user, token } = useAuth();
     useEffect(() => {
-        fetch(`http://localhost:5000/appointments?email=${user.email}&date=${date.toLocaleDateString()}`, {
+        fetch(`https://rocky-peak-44732.herokuapp.com/appointments?email=${user.email}&date=${date.toLocaleDateString()}`, {
             headers: {
                 "authorization": `Bearer ${token}`
             }

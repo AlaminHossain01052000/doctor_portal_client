@@ -11,7 +11,7 @@ const MakeAdmin = () => {
     const handleMakeAdmin = e => {
         // const admin={email:email}
         const admin = { email }  //both 10 and 11 line is same
-        fetch("http://localhost:5000/users/admin", {
+        fetch("https://rocky-peak-44732.herokuapp.com/users/admin", {
             method: "PUT",
             headers: {
                 "authorization": `Bearer ${token}`,

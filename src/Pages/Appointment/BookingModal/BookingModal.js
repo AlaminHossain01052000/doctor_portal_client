@@ -40,7 +40,7 @@ const BookingModal = ({ open, handleClose, booking, date, setBookingSuccess }) =
 
 
         }
-        fetch("http://localhost:5000/appointments", {
+        fetch("https://rocky-peak-44732.herokuapp.com/appointments", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
