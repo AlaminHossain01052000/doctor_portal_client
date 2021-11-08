@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+firebase live site =>https://doctor-portal-cc172.web.app/
+heroku live link => https://rocky-peak-44732.herokuapp.com/
+
+github client site link =>https://github.com/AlaminHossain01052000/doctor_portal_client
+
+github server site link =>https://github.com/AlaminHossain01052000/doctor_portal_server
+
 ## Available Scripts
 
 In the project directory, you can run:
