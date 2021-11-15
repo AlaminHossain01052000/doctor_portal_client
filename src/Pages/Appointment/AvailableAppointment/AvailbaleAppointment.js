@@ -11,37 +11,43 @@ const AvailbaleAppointment = (props) => {
             id: 1,
             name: "Oral Surgery",
             time: "6.00 PM - 8.00 PM",
-            space: 10
+            space: 10,
+            price: 20
         },
         {
             id: 2,
             name: "Teeth Cleaning",
             time: "8.00 PM - 9.00 PM",
-            space: 10
+            space: 10,
+            price: 25
         },
         {
             id: 3,
             name: "Teeth Replacing",
             time: "9.00 PM - 10.00 PM",
-            space: 10
+            space: 10,
+            price: 15
         },
         {
             id: 4,
             name: "Oxio Surgery",
             time: "5.00 PM - 6.00 PM",
-            space: 10
+            space: 10,
+            price: 18
         },
         {
             id: 5,
             name: "Thorax Surgery",
             time: "4.30 PM - 5.30 PM",
-            space: 10
+            space: 10,
+            price: 21
         },
         {
             id: 6,
             name: "Ear Surgery",
             time: "3.00 PM - 4.00 PM",
-            space: 10
+            space: 10,
+            price: 30
         }
     ]
     return (

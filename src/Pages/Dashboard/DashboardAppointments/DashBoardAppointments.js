@@ -1,19 +1,20 @@
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const DashBoardAppointments = ({ date }) => {
     const [appointments, setAppointments] = useState([]);
     const { user, token } = useAuth();
     useEffect(() => {
-        fetch(`https://rocky-peak-44732.herokuapp.com/appointments?email=${user.email}&date=${date.toLocaleDateString()}`, {
+        fetch(`https://safe-anchorage-71063.herokuapp.com/appointments?email=${user.email}&date=${date.toLocaleDateString()}`, {
             headers: {
                 "authorization": `Bearer ${token}`
             }
         })
             .then(res => res.json())
             .then(data => setAppointments(data))
-    }, [date, user.email, token])
+    }, [date, user, token])
 
     return (
         <div>
@@ -40,7 +41,13 @@ const DashBoardAppointments = ({ date }) => {
                                 </TableCell>
                                 <TableCell align="right">{row.time}</TableCell>
                                 <TableCell align="right">{row.treatmentName}</TableCell>
-                                <TableCell align="right">Hello</TableCell>
+                                <TableCell align="right">{row.payment ?
+                                    'Paid' :
+                                    <Link to={`/dashboard/payment/${row._id}`}>
+                                        <Button>Pay</Button>
+
+                                    </Link>
+                                }</TableCell>
 
                             </TableRow>
                         ))}

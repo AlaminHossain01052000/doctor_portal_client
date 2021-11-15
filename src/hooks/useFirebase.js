@@ -5,10 +5,12 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
 initializeFirebase();
 const useFirebase = () => {
     const [user, setUser] = useState({});
+
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const [admin, setAdmin] = useState(false);
     const [token, setToken] = useState("");
+
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
     const registerUser = (email, password, history, name) => {
@@ -66,7 +68,7 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const redirect_uri = location?.state?.from || "/home";
-                history.push(redirect_uri);
+                history.replace(redirect_uri);
                 setError("");
 
                 saveUser(result.user.email, result.user.displayName, "PUT")
@@ -96,17 +98,19 @@ const useFirebase = () => {
     }, [auth])
     useEffect(() => {
 
-        fetch(`https://rocky-peak-44732.herokuapp.com/users/${user.email}`)
+        fetch(`https://safe-anchorage-71063.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
 
                 setAdmin(data.admin);
             })
-    }, [user.email])
+
+
+    }, [user])
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName }
 
-        fetch("https://rocky-peak-44732.herokuapp.com/users", {
+        fetch("https://safe-anchorage-71063.herokuapp.com/users", {
             method: method,
             headers: {
                 "content-type": "application/json"

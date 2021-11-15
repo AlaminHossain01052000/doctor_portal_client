@@ -31,16 +31,19 @@ const BookingModal = ({ open, handleClose, booking, date, setBookingSuccess }) =
         boxShadow: 24,
         p: 4,
     };
+
     const handleFormSubmitting = e => {
         e.preventDefault();
         const bookedAppointment = {
             ...bookingInfo,
             treatmentName: booking.name,
+            price: booking.price,
             time: date.toLocaleDateString()
 
 
         }
-        fetch("https://rocky-peak-44732.herokuapp.com/appointments", {
+
+        fetch("https://safe-anchorage-71063.herokuapp.com/appointments", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -80,6 +83,14 @@ const BookingModal = ({ open, handleClose, booking, date, setBookingSuccess }) =
                                 sx={{ width: "90%", mb: 1 }}
                                 id="outlined-size-small"
                                 defaultValue={booking.time}
+                                disabled
+
+                                size="small"
+                            />
+                            <TextField
+                                sx={{ width: "90%", mb: 1 }}
+                                id="outlined-size-small"
+                                defaultValue={booking.price}
                                 disabled
 
                                 size="small"

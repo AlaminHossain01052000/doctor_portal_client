@@ -25,7 +25,9 @@ const Register = () => {
 
 
         }
-
+        else {
+            alert("Retype password failed");
+        }
         e.preventDefault();
     }
     return (
@@ -37,15 +39,19 @@ const Register = () => {
                         loading ? <CircularProgress /> : <form onSubmit={handleSubmitting}>
                             <TextField name="userName" label="User Name" variant="standard" sx={{ width: "75%", m: 1 }}
                                 onChange={handleCollectingData}
+                                required
                             />
                             <TextField name="email" label="Email" variant="standard" sx={{ width: "75%", m: 1 }}
                                 onChange={handleCollectingData}
+                                required
                             />
                             <TextField name="password" type="password" label="Password" variant="standard" sx={{ width: "75%", m: 1 }}
                                 onChange={handleCollectingData}
+                                required
                             />
                             <TextField name="password2" type="password" label="Re-enter Password" variant="standard" sx={{ width: "75%", m: 1 }}
                                 onChange={handleCollectingData}
+                                required
                             />
                             <Button sx={{ width: "75%", mt: 4 }} variant="contained" type="submit">
                                 Register

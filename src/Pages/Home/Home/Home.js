@@ -3,6 +3,7 @@ import Navigation from '../../../Shared/Navigation/Navigation';
 import AppointmentBanner from '../AppointmentBanner/AppointmentBanner';
 import Banner from '../Banner/Banner';
 import ContactUs from '../ContactUs/ContactUs';
+import Doctors from '../Doctors/Doctors';
 import Exceptional from '../Exceptional/Exceptional';
 import Footer from '../Footer/Footer';
 import OpeningHours from '../OpeningHours/OpeningHours';
@@ -19,7 +20,9 @@ const Home = () => {
             <Services></Services>
             <Exceptional />
             <AppointmentBanner></AppointmentBanner>
+            <Doctors />
             <Testimonial></Testimonial>
+
             <ContactUs></ContactUs>
             <Footer></Footer>
         </div>
